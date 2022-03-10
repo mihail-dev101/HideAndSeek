@@ -17,6 +17,11 @@ namespace hide_and_seek_backend.Controllers
         [HttpPost("ImportFile")]
         public IActionResult ImportFile([FromForm] IFormFile file, [FromForm] string key, [FromForm] string operation)
         {
+            var allFiles = Directory.GetFiles(folderName);
+            foreach (var f in allFiles)
+            {
+                System.IO.File.Delete(f);
+            }
             byte[] byteArray;
             byte[] keyBytes;
             string newExtension;

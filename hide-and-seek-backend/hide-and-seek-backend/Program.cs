@@ -32,13 +32,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseFileServer(new FileServerOptions
-{
-    FileProvider = new PhysicalFileProvider(
-        System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Data")),
-    RequestPath = "",
-    EnableDefaultFiles = true
-}); 
+//app.UseFileServer(new FileServerOptions
+//{
+//    FileProvider = new PhysicalFileProvider(
+//        System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Data")),
+//    RequestPath = "",
+//    EnableDefaultFiles = true
+//}); 
 
 app.UseHttpsRedirection();
 
